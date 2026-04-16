@@ -109,6 +109,7 @@ public sealed class Worker : BackgroundService
                         device.DisplayName, _options.SnmpRetryDelaySeconds, attempt + 1, _options.SnmpRetryCount + 1);
                     await Task.Delay(TimeSpan.FromSeconds(_options.SnmpRetryDelaySeconds), stoppingToken);
                 }
+            }
         }
 
         if (lastException != null)
